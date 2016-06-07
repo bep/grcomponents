@@ -1,2 +1,2 @@
-# grcomponents
-Some usable components for Go React, see https://github.com/bep/gr
+# GR Components
+Some reusable components for GR (Go React), see https://github.com/bep/gr
