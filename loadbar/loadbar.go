@@ -22,19 +22,19 @@ type loadBarRenderer struct {
 	*gr.This
 }
 
-// LoadBar is a convenience composite of the component and the component implementation needed to return status updates.
+// Loader is a convenience composite of the component and the component implementation needed to return status updates.
 // See SetStatus.
-type LoadBar struct {
+type Loader struct {
 	*gr.ReactComponent
 	delegate *loadBarRenderer
 }
 
 // NewLoadBar creates a new load bar with the optional options.
-func NewLoadBar(options ...gr.Option) *LoadBar {
+func NewLoader(options ...gr.Option) *Loader {
 	lb := &loadBarRenderer{}
 	rc := gr.New(lb, options...)
 
-	return &LoadBar{ReactComponent: rc, delegate: lb}
+	return &Loader{ReactComponent: rc, delegate: lb}
 }
 
 func (c *loadBarRenderer) Render() gr.Component {
@@ -68,7 +68,7 @@ func (c *loadBarRenderer) Render() gr.Component {
 }
 
 // SetLoadState is the callback used by event handler to trigger a state change.
-func (lb *LoadBar) SetLoadState(s LoadState) {
+func (lb *Loader) SetLoadState(s LoadState) {
 	lb.delegate.setLoadState(s)
 }
 

@@ -7,7 +7,7 @@ This is a load bar for [GR (Go React)](https://github.com/bep/gr) that can be us
 ## Use
 
 ```go
-var loadBarIframe = loadbar.NewLoadBar()
+var loadBarIframe = loadbar.NewLoader()
 
 // loadBarIframe.SetStatus must be used as a callback to report back status changes.
 
