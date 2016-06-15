@@ -8,7 +8,6 @@ import (
 	"github.com/bep/grcomponents/loadbar"
 )
 
-
 // IFrame renders the IFrame.
 type IFrame struct {
 	*gr.This
@@ -71,7 +70,7 @@ func (g IFrame) iFrameLoaded(event *gr.Event) {
 }
 
 func (g IFrame) ShouldComponentUpdate(next gr.Cops) bool {
-	if  g.Props().HasChanged(next.Props, urlKey) {
+	if g.Props().HasChanged(next.Props, urlKey) {
 		g.Props().Call("IFrameLoaded", loadbar.StateLoading)
 
 	}

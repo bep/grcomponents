@@ -85,4 +85,3 @@ func (c *loadBarRenderer) setLoadState(s LoadState) {
 func (c *loadBarRenderer) GetInitialState() gr.State {
 	return gr.State{loadStateKey: StateInitial}
 }
-
