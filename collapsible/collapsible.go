@@ -36,25 +36,23 @@ func (c *toggle) Render() gr.Component {
 		buttonText = "Show"
 	}
 
-	return el.Div(gr.CSS("panel panel"),
+	return el.Div(
+		gr.CSS("panel panel-default"),
 		el.Div(
-			gr.CSS("panel panel"),
-			el.Div(
-				gr.CSS("panel-heading"),
-				el.Header4(
-					gr.CSS("panel-title"),
-					el.Button(
-						gr.CSS("btn", "btn-link"),
-						gr.Text(buttonText),
-						evt.Click(c.onClick)),
-				),
+			gr.CSS("panel-heading"),
+			el.Header4(
+				gr.CSS("panel-title"),
+				el.Button(
+					gr.CSS("btn", "btn-link"),
+					gr.Text(buttonText),
+					evt.Click(c.onClick)),
 			),
+		),
+		el.Div(
+			toggleStyle,
 			el.Div(
-				toggleStyle,
-				el.Div(
-					gr.CSS("panel-body"),
-					c.Children().Element(),
-				),
+				gr.CSS("panel-body"),
+				c.Children().Element(),
 			),
 		),
 	)
