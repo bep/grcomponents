@@ -25,6 +25,9 @@ type Options struct {
 	OnPanelClass      string
 	OffPanelBodyClass string
 	OnPanelBodyClass  string
+
+	// Panel will, by default, start in its closed state. Set this flag to change that.
+	StartOpen bool
 }
 
 // New creates a new toggle wrapper with sane defaults.
@@ -105,7 +108,7 @@ func (c *toggle) Render() gr.Component {
 }
 
 func (c *toggle) GetInitialState() gr.State {
-	return gr.State{toggleKey: false}
+	return gr.State{toggleKey: c.o.StartOpen}
 }
 
 func (c *toggle) onClick(event *gr.Event) {
